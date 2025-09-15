@@ -1,13 +1,4 @@
 """
-To run:
-1. cd flask
-2. flask run OR python -m flask run
-"""
-from flask import Flask, jsonify, request
-
-app = Flask(__name__)
-
-"""
 We are building a movie database and need to complete a couple of API endpoints
 We won't connect to a real database here, so we want you to create a data structure to mimic one
 
@@ -18,22 +9,28 @@ Movies have the following attributes:
     "year": int,
     "director": string,
     "rating": float (1-5 inclusive),
-    "genre": string (must be one of: action, horror, drama, sci-fi)
+    "num_ratings": int (>= 0)
 }
+
+To run:
+1. cd flask
+2. flask run OR python -m flask run
 """
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
 
 # Create your data structure(s) here:
 
 # Complete the API endpoints below:
 
 """
-Add movie to the database
+POST /movies -- Add movie to the database
 Request body: {
     “title”: string,
     “year”: int,
     “director”: string,
     “rating”: float (1-5 inclusive)
-    “genre”: string (must be one of: action, horror, drama, sci-fi)
 }
 
 Response:
@@ -46,13 +43,15 @@ def add_movie():
     pass
 
 """
-Get all movies
+GET /movies -- Get all movies
 BONUS: add query parameter to filter movies by title (e.g. /movies?title=Inception)
 
 Response: status code 200, JSON: 
-{
-  { "id": 1, "title": "Inception", "year": 2010, "director": "Christopher Nolan", "genre": "Sci-Fi", rating: 4.98},
-  …
+{ 
+    items: [
+        { "id": 1, "title": "Inception", "year": 2010, "director": "Christopher Nolan", "rating": 4.98, "num_ratings": 5},
+        …
+    ]
 }
 """
 @app.route('/movies', methods=['GET'])
@@ -60,16 +59,15 @@ def get_movies():
     pass
 
 """
-Update movie rating
-Request body:
-{
-  “ratings”: [3, 4.9, 1, 2, 4.0]
-}
+PUT /movies/{movie_id}/rating -- Recalculate movie's ratings field given new ratings, updating rating and num_rating attributes
+Example path: /movies/33/rating, where 33 is a movie_id
+Request body: {“ratings”: [3, 4.9, 1, 2, 4.0]}
 
 Response:
-If valid: 200 status code, JSON {“id”: <movie_id>, “rating”: <rating>}
-If input invalid: 400 status code, JSON {“error”: <msg>)
+If valid: 200 status code, JSON {“id”: <movie_id>, “rating”: <rating>, "num_ratings": <num_ratings>}
+If input invalid or movie_id doesn't exist: 400 status code, JSON {“error”: <msg>)
 """
-@app.route('/movies/<movie_id>/rating', methods=['PUT'])
-def update_rating(movie_id):
+@app.route('TODO', methods=['PUT'])
+def update_rating():
+    # Make sure to complete the path!
     pass
