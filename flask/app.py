@@ -39,15 +39,15 @@ Request body: {
 Response:
 If valid: 201 status code and JSON {“id”: <movie id>}
 If invalid: 400 status code and JSON {“error”: <message>}
-If duplicate of a previous entry: return 409 status code and JSON {“error”: <message>”}
+If duplicate of a previous entry: 409 status code and JSON {“error”: <message>”}
 """
 @app.route('/movies', methods=['POST'])
 def add_movie():
-    return 400, jsonify({})
+    pass
 
 """
 Get all movies
-BONUS: add query parameter filter movies by title
+BONUS: add query parameter to filter movies by title (e.g. /movies?title=Inception)
 
 Response: status code 200, JSON: 
 {
@@ -57,7 +57,7 @@ Response: status code 200, JSON:
 """
 @app.route('/movies', methods=['GET'])
 def get_movies():
-    return 400, jsonify({})
+    pass
 
 """
 Update movie rating
@@ -72,4 +72,4 @@ If input invalid: 400 status code, JSON {“error”: <msg>)
 """
 @app.route('/movies/<movie_id>/rating', methods=['PUT'])
 def update_rating(movie_id):
-    return 400, jsonify({})
+    pass
