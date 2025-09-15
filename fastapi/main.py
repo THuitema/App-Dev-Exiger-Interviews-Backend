@@ -18,6 +18,7 @@ To run:
 """
 
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -48,9 +49,11 @@ GET /movies -- Get all movies
 BONUS: add query parameter to filter movies by title (e.g. /movies?title=Inception)
 
 Response: status code 200, JSON: 
-{
-  { "id": 1, "title": "Inception", "year": 2010, "director": "Christopher Nolan", "rating": 4.98, "num_ratings": 5},
-  …
+{ 
+    items: [
+        { "id": 1, "title": "Inception", "year": 2010, "director": "Christopher Nolan", "rating": 4.98, "num_ratings": 5},
+        …
+    ]
 }
 """
 @app.get('/movies')
