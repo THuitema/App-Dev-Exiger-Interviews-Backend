@@ -59,7 +59,7 @@ def get_movies():
     pass
 
 """
-PUT /movies/{movie_id}/rating -- Recalculate movie's ratings field given new ratings, updating rating and num_rating attributes
+PUT /movies/<movie_id>/rating -- Recalculate movie's ratings field given new ratings, updating rating and num_rating attributes
 Example path: /movies/33/rating, where 33 is a movie_id
 Request body: {“ratings”: [3, 4.9, 1, 2, 4.0]}
 
@@ -67,7 +67,6 @@ Response:
 If valid: 200 status code, JSON {“id”: <movie_id>, “rating”: <rating>, "num_ratings": <num_ratings>}
 If input invalid or movie_id doesn't exist: 400 status code, JSON {“error”: <msg>)
 """
-@app.route('TODO', methods=['PUT'])
-def update_rating():
-    # Make sure to complete the path!
+@app.route('/movies/<movie_id>/rating', methods=['PUT'])
+def update_rating(movie_id):
     pass

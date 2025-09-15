@@ -69,7 +69,6 @@ Response:
 If valid: 200 status code, JSON {“id”: <movie_id>, “rating”: <rating>, "num_ratings": <num_ratings>}
 If input invalid or movie_id doesn't exist: 400 status code, JSON {“error”: <msg>)
 """
-@app.put('TODO')
-def update_rating():
-    # Make sure to complete the path!
+@app.put('/movies/{movie_id}/rating')
+def update_rating(movie_id):
     pass
