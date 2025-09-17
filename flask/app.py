@@ -38,7 +38,7 @@ If valid: 201 status code and JSON {“id”: <movie id>}
 If invalid: 400 status code and JSON {“error”: <message>}
 If duplicate of a previous entry: 409 status code and JSON {“error”: <message>”}
 """
-@app.route('/movies', methods=['POST'])
+# TODO: add route decorator
 def add_movie():
     pass
 
@@ -54,7 +54,7 @@ Response: status code 200, JSON:
     ]
 }
 """
-@app.route('/movies', methods=['GET'])
+# TODO: add route decorator
 def get_movies():
     pass
 
@@ -67,6 +67,6 @@ Response:
 If valid: 200 status code, JSON {“id”: <movie_id>, “rating”: <rating>, "num_ratings": <num_ratings>}
 If input invalid or movie_id doesn't exist: 400 status code, JSON {“error”: <msg>)
 """
-@app.route('/movies/<movie_id>/rating', methods=['PUT'])
-def update_rating(movie_id):
+# TODO: add route decorator
+def update_rating():
     pass
