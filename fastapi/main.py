@@ -17,7 +17,7 @@ To run:
 2. `fastapi dev main.py`
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response, status
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -40,7 +40,7 @@ If valid: 201 status code and JSON {“id”: <movie id>}
 If invalid: 400 status code and JSON {“error”: <message>}
 If duplicate of a previous entry: 409 status code and JSON {“error”: <message>”}
 """
-@app.post('/movies')
+# TODO: add route decorator
 def add_movie():
     pass
 
@@ -56,7 +56,7 @@ Response: status code 200, JSON:
     ]
 }
 """
-@app.get('/movies')
+# TODO: add route decorator
 def get_movies():
     pass
 
@@ -69,6 +69,6 @@ Response:
 If valid: 200 status code, JSON {“id”: <movie_id>, “rating”: <rating>, "num_ratings": <num_ratings>}
 If input invalid or movie_id doesn't exist: 400 status code, JSON {“error”: <msg>)
 """
-@app.put('/movies/{movie_id}/rating')
-def update_rating(movie_id):
+# TODO: add route decorator
+def update_rating():
     pass
