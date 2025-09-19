@@ -27,7 +27,6 @@ Request body: {
     “title”: string,
     “year”: int,
     “director”: string,
-    “rating”: float (1-5 inclusive)
 }
 
 Response:
